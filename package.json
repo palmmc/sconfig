@@ -1,6 +1,6 @@
 {
-    "name": "serenityconfig",
-    "version": "0.1.04",
+    "name": "serenity-config",
+    "version": "0.1.05",
     "author": "palm1",
     "description": "A powerful API for plugin config and file management.",
     "main": "dist/index.js",
