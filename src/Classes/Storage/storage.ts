@@ -140,13 +140,7 @@ class Storage<T extends object> {
       }
     } else if (this.type === "sqlite") {
       // Initialize database
-      const bindingPath = require.resolve(
-        "better-sqlite3/build/Release/better_sqlite3.node" // wth, why do this module need this to function
-      );
-
-      this.db = new Database(this.path, {
-        nativeBinding: bindingPath,
-      });
+      this.db = new Database(this.path);
 
       // Create key value table if needed.
       this.db.exec(`
