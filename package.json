@@ -1,5 +1,5 @@
 {
-    "name": "confy",
+    "name": "sconfig",
     "version": "0.1.0",
     "author": "palm1",
     "description": "A powerful API for plugin config and file management.",
