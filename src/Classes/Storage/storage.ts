@@ -1,6 +1,6 @@
 import { resolve, extname, dirname, relative } from "node:path";
 import { writeFileSync, readFileSync, existsSync, mkdirSync } from "node:fs";
-import Database, { Statement } from "better-sqlite3";
+import Database, { Statement } from "bun:sqlite";
 import { SConfigPlugin } from "../../index";
 import { Logger, LoggerColors } from "@serenityjs/logger";
 import { StorageType } from "../../Enums/storageType";
@@ -24,7 +24,7 @@ class Storage<T extends object> {
 
   private readonly type: "json" | "sqlite";
 
-  private db?: Database.Database;
+  private db?: Database;
 
   private statements?: {
     getValue: Statement;

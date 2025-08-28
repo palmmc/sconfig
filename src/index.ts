@@ -36,7 +36,7 @@ class SConfigPlugin extends Plugin implements PluginEvents {
   /**
    * @Example
    */
-  public initializeProperties() {
+  private initializeProperties() {
     const properties = new Properties<ExampleProperties>(
       this,
       "properties.yaml",
@@ -47,7 +47,7 @@ class SConfigPlugin extends Plugin implements PluginEvents {
     setStorageDebug(this);
   }
 
-  public initializeStorage() {
+  private initializeStorage() {
     const storage = new Storage<ExampleStorage>(
       StorageType.Player,
       "players.sqlite",

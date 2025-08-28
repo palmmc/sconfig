@@ -1,6 +1,6 @@
 {
     "name": "serenityconfig",
-    "version": "0.1.03",
+    "version": "0.1.04",
     "author": "palm1",
     "description": "A powerful API for plugin config and file management.",
     "main": "dist/index.js",
@@ -23,8 +23,6 @@
         "@serenityjs/protocol": "*"
     },
     "devDependencies": {
-        "@types/better-sqlite3": "^7.6.13",
-        "better-sqlite3": "^12.2.0",
         "tsup": "^8.3.5",
         "typescript": "^5.6.3",
         "yaml": "^2.8.1"

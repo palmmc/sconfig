@@ -9,4 +9,17 @@ export default defineConfig({
   keepNames: true,
   noExternal: [/^(?!@serenityjs\/)/],
   external: [/^@serenityjs\//],
+  esbuildPlugins: [
+    {
+      name: "bun-externals",
+      setup(build) {
+        build.onResolve({ filter: /^bun:/ }, (args) => {
+          return {
+            path: args.path,
+            external: true,
+          };
+        });
+      },
+    },
+  ],
 });
