@@ -1,13 +1,13 @@
 import { resolve, extname, dirname, relative } from "node:path";
 import { writeFileSync, readFileSync, existsSync, mkdirSync } from "node:fs";
 import Database, { Statement } from "better-sqlite3";
-import { ConfyPlugin } from "../../index";
+import { SConfigPlugin } from "../../index";
 import { Logger, LoggerColors } from "@serenityjs/logger";
 import { StorageType } from "../../Enums/storageType";
 
 let debugEnabled = false;
 
-function setStorageDebug(plugin: ConfyPlugin) {
+function setStorageDebug(plugin: SConfigPlugin) {
   debugEnabled = plugin.properties?.getValue("debug") ?? false;
 }
 

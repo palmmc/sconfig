@@ -10,11 +10,11 @@ import {
 import { Logger, LoggerColors } from "@serenityjs/logger";
 import { parse } from "yaml";
 import { Plugin } from "@serenityjs/plugins";
-import { ConfyPlugin } from "../../index";
+import { SConfigPlugin } from "../../index";
 
 let debugEnabled = false;
 
-function setPropertiesDebug(plugin: ConfyPlugin) {
+function setPropertiesDebug(plugin: SConfigPlugin) {
   debugEnabled = plugin.properties?.getValue("debug") ?? false;
 }
 
