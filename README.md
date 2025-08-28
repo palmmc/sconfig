@@ -36,7 +36,7 @@ A powerful API for plugin config and file management, created for **[SerenityJS]
     class ExamplePlugin extends Plugin {  n
       public onInitialize(): void {
         // The resolve method fetches the SConfigPlugin instance from the plugin you installed.
-        const { Properties, Storage } = this.resolve<SConfigPlugin>("serenity-config")!; // Notice the use of `!` can be unsafe if the plugin is not loaded correctly.
+        const { Properties, Storage, StorageType } = this.resolve<SConfigPlugin>("serenity-config")!; // Notice the use of `!` can be unsafe if the plugin is not loaded correctly.
       }
     }
     ```
@@ -58,3 +58,4 @@ const storage = new Storage<ExampleStorage>(
 );
 storage.setValue("example", true)
 ```
+
