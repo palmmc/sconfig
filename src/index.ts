@@ -21,11 +21,12 @@ class SConfigPlugin extends Plugin implements PluginEvents {
   public readonly priority: PluginPriority = PluginPriority.High;
   public properties?: Properties<ExampleProperties>;
 
-  private readonly Properties = Properties;
-  private readonly Storage = Storage;
+  public readonly Properties = Properties;
+  public readonly Storage = Storage;
+  public readonly StorageType = StorageType;
 
   public constructor() {
-    super("serenity-config", "0.1.0");
+    super("serenity-config", "0.1.3");
   }
 
   public onInitialize(): void {
@@ -65,4 +66,4 @@ class SConfigPlugin extends Plugin implements PluginEvents {
 
 export default new SConfigPlugin();
 
-export { SConfigPlugin };
+export { SConfigPlugin, Properties, Storage, StorageType };

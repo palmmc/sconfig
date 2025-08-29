@@ -200,12 +200,10 @@ class Storage<T extends object> {
       // Merge with defaults to ensure all keys are present
       this.values = { ...this.values, ...jsonData };
     } catch (error) {
-      // If parses as invalid, reset to defaults.
+      // If parses as invalid, return null.
       if (debugEnabled)
-        Storage.logger.warn(
-          `Invalid storage file at "${this.relative}", regenerating...`
-        );
-      this.writeJson();
+        Storage.logger.warn(`§cFailed to read data at §r"${this.relative}"§c.`);
+      return null;
     }
   }
 
@@ -240,10 +238,10 @@ class Storage<T extends object> {
         }
       }
     } catch (error) {
-      if (debugEnabled)
-        Storage.logger.warn(
-          `Invalid storage file at "${this.relative}", regenerating...`
-        );
+      Storage.logger.warn(
+        `§cFailed to read data from SQLite database at §r"${this.relative}"§c.`
+      );
+      return null;
     }
   }
 
@@ -259,10 +257,9 @@ class Storage<T extends object> {
         value: JSON.stringify(value),
       });
     } catch (error) {
-      if (debugEnabled)
-        Storage.logger.error(
-          `Error writing to SQLite database at "${this.relative}".`
-        );
+      Storage.logger.error(
+        `Error writing to SQLite database at "${this.relative}".`
+      );
     }
   }
 }

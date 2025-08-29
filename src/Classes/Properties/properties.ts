@@ -33,7 +33,12 @@ class Properties<T> {
   public values: T;
 
   public constructor(plugin: Plugin, path: string, template: string) {
-    this.path = resolve(plugin.path.replace("\\plugins\\", "\\config\\"), path);
+    this.path = resolve(
+      plugin.path.replace("\\plugins\\", "\\config\\"),
+      "..",
+      plugin.identifier,
+      path
+    );
 
     this.template = template;
 

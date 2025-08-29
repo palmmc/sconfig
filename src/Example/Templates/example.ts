@@ -1,6 +1,6 @@
 const EXAMPLE_PROPERTIES_TEMPLATE = `# -- Serenity Example Plugin Configuration --
 
-#  Show Confy debug messages.
+#  Show debug messages.
 debug: false
 `;
 
